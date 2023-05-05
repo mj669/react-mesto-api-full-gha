@@ -1,0 +1,16 @@
+.register__field {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.register__field:last-of-type {
+    margin-bottom: 216px;
+}
+
+@media screen and (max-width: 560px) {
+    .register__field:last-of-type {
+        margin-bottom: 173px;
+    }
+}

@@ -1,0 +1,9 @@
+.header__top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+    width: 100%;
+    padding: 28px 0 0;
+}
+

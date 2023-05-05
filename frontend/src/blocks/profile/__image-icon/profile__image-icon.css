@@ -1,0 +1,29 @@
+.profile__image-icon {
+    width: 26px;
+    height: 26px;
+    position: absolute;
+    top: 48px;
+    left: 48px;
+    z-index: -1;
+}
+
+/* @media screen and (max-width:768px) {
+    .profile__image-icon {
+        top: 205px;
+        left: 50px;
+    }
+}
+
+@media screen and (max-width:560px) {
+    .profile__image-icon {
+        top: 205px;
+        left: 260px;
+    }
+}
+
+@media screen and (max-width:560px) {
+    .profile__image-icon {
+        top: 170px;
+        left: 140px;
+    }
+} */

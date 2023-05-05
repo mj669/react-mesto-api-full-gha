@@ -1,0 +1,13 @@
+.register__text-error {
+    color: #ff0000;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 1.25;
+    vertical-align: top;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    left: 0;
+    top: 32px;
+    opacity: 0;
+}

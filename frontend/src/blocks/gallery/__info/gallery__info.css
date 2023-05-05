@@ -1,0 +1,6 @@
+.gallery__info {
+    margin: 19px 15px 22px 21px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}

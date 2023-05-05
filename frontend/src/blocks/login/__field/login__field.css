@@ -1,0 +1,16 @@
+.login__field {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.login__field:last-of-type {
+    margin-bottom: 216px;
+}
+
+@media screen and (max-width: 560px) {
+    .login__field:last-of-type {
+        margin-bottom: 173px;
+    }
+}

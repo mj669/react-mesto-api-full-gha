@@ -1,0 +1,15 @@
+.gallery__like_active {
+    background-image: url(../../../../images/Like-black.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    min-width: 22px;
+    min-height: 19px;
+    cursor: pointer;
+    opacity: 1;
+    transition: opacity .1s ease;
+}
+
+.gallery__like:hover {
+    opacity: .6;
+}
