@@ -1,8 +1,10 @@
+require('dotenv').config();
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const User = require('../models/user');
 const errors = require('../errors');
-const { JWT_SECRET } = require('../utils/utils');
+
+const { NODE_ENV, JWT_SECRET } = process.env;
 
 const checkUser = (user, res) => {
   if (!user) {
@@ -24,9 +26,13 @@ const loginUser = (req, res, next) => {
         if (!matched) {
           return next(new errors.AuthError('Неверные почта или пароль'));
         }
-        const token = jwt.sign({ _id: user._id }, JWT_SECRET, {
-          expiresIn: '7d',
-        });
+        const token = jwt.sign(
+          { _id: user._id },
+          NODE_ENV === 'production' ? JWT_SECRET : 'dev-secret',
+          {
+            expiresIn: '7d',
+          },
+        );
         return res.send({ token });
       });
     })

@@ -101,10 +101,9 @@ class Api {
 }
 
 const api = new Api({
-    url: 'https://nomoreparties.co/v1/cohort-58',
+    url: 'api.mj669.nomoredomains.monster',
     headers: {
-        authorization: '7045cafe-3b85-4c5a-8eec-e8066aee908b',
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
     }
 });
 
