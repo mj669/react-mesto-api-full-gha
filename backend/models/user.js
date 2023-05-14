@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const { default: validator } = require('validator');
-const { regex } = require('../utils/utils');
+const { regExUrl } = require('../utils/utils');
 
 const userSchema = new mongoose.Schema({
   name: {
@@ -22,7 +22,7 @@ const userSchema = new mongoose.Schema({
     required: false,
     validate: {
       validator(v) {
-        regex.test(v);
+        regExUrl.test(v);
       },
     },
     default: 'https://pictures.s3.yandex.net/resources/jacques-cousteau_1604399756.png',

@@ -41,13 +41,12 @@ app.use(authRouter);
 app.use(auth);
 app.use(router);
 
-app.use(errorLogger);
-
-app.use(errors());
-
 app.use((req, res, next) => {
   next(new NotFoundError('Страница не найдена'));
 });
+
+app.use(errorLogger);
+app.use(errors());
 
 app.use((err, req, res, next) => {
   const { statusCode = 500, message } = err;
@@ -59,5 +58,6 @@ app.use((err, req, res, next) => {
 });
 
 app.listen(PORT, () => {
+  // eslint-disable-next-line no-console
   console.log(`Server started on port ${PORT}`);
 });

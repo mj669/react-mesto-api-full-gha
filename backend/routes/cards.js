@@ -1,6 +1,6 @@
 const cardsRouter = require('express').Router();
 const { celebrate, Joi } = require('celebrate');
-const { regex } = require('../utils/utils');
+const { regExUrl } = require('../utils/utils');
 const {
   getCards,
   createCard,
@@ -16,21 +16,21 @@ cardsRouter.post(
   celebrate({
     body: Joi.object({
       name: Joi.string()
+        .required()
         .min(2)
         .max(30)
         .messages({
           'string.min': 'Название карточки не должно быть меньше 2 символов',
           'string.max': 'Название карточки не должно быть больше 30 символов',
           'any.required': 'Название карточки не должно быть пустым',
-        })
-        .required(),
+        }),
       link: Joi.string()
-        .regex(regex)
+        .required()
+        .regex(regExUrl)
         .messages({
           'string.dataUri': 'Неверная ссылка',
           'any.required': 'Название не должно быть пустым',
-        })
-        .required(),
+        }),
     }),
   }),
   createCard,
@@ -40,7 +40,9 @@ cardsRouter.delete(
   celebrate({
     params: Joi.object({
       cardId: Joi.string()
-        .hex().length(24)
+        .required()
+        .hex()
+        .length(24)
         .messages({
           'string.hex': 'Некорректный id',
         }),
@@ -54,7 +56,9 @@ cardsRouter.put(
   celebrate({
     params: Joi.object({
       cardId: Joi.string()
-        .hex().length(24)
+        .required()
+        .hex()
+        .length(24)
         .messages({
           'string.hex': 'Некорректный id',
         }),
@@ -67,7 +71,9 @@ cardsRouter.delete(
   celebrate({
     params: Joi.object({
       cardId: Joi.string()
-        .hex().length(24)
+        .required()
+        .hex()
+        .length(24)
         .messages({
           'string.hex': 'Некорректный id',
         }),

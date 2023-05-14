@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const { regex } = require('../utils/utils');
+const { regExUrl } = require('../utils/utils');
 
 const cardSchema = new mongoose.Schema({
   name: {
@@ -13,7 +13,7 @@ const cardSchema = new mongoose.Schema({
     required: true,
     validate: {
       validator(v) {
-        regex.test(v);
+        regExUrl.test(v);
       },
       message: 'Введите корректный URL изображения',
     },

@@ -1,7 +1,7 @@
 const authRouter = require('express').Router();
 const { celebrate, Joi } = require('celebrate');
 const { loginUser, createUser } = require('../controllers/users');
-const { regex } = require('../utils/utils');
+const { regExUrl } = require('../utils/utils');
 
 authRouter.post(
   '/signin',
@@ -41,7 +41,7 @@ authRouter.post(
         .max(30)
         .message('Это поле должно быть от 2 до 30 символов'),
       avatar: Joi.string()
-        .regex(regex)
+        .regex(regExUrl)
         .message('Неверный URL'),
     }),
   }),
